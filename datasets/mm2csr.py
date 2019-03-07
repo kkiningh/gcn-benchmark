@@ -22,6 +22,9 @@ def main(args):
     data = scipy.sparse.csr_matrix(data)
 
     # Write out the seperate
+    with open(base + '.conf', 'w') as f:
+        f.write("{} {} {}".format(data.shape[0], data.shape[1], data.nnz))
+
     data.data.astype(np.int32).tofile(base + '.data')
     data.indptr.astype(np.int32).tofile(base + '.indptr')
     data.indices.astype(np.int32).tofile(base + '.indices')
