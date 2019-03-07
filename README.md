@@ -1,18 +1,24 @@
 GCN Benchmarks
 ---
 
-This repository contains performance benchmarks for the core operation in Graph Convolutional Networks (GCN)
+This repository contains performance benchmarks for the core operations in Graph Convolutional Networks (GCN).
 
-## Requirements
+## Setup
 
-You must have the following installed to run the benchmarks
+You must have [Intel MKL](https://software.intel.com/en-us/mkl/choose-download).
+After installing, you'll need to source the setup script before making.
+On OSX for the 2019 version of MKL, this is located at the following path after installation.
 
- - [Intel MKL](https://software.intel.com/en-us/mkl/choose-download)
+```bash
+source /opt/intel/compilers_and_libraries_2019/mac/mkl/bin/mklvars.sh
+```
 
-## Datasets
+### Datasets
 
-To download the datasets for a benchmark, run the following
+To download the datasets, run the following:
 
 ```bash
 cd datasets && make all
 ```
+
+Note some of the datasets are quite large once uncompressed
